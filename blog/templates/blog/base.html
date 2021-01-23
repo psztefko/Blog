@@ -9,6 +9,10 @@
 
     <link rel="stylesheet" type="text/css" href="{% static 'blog/main.css' %}">
 
+    <link rel="stylesheet" type="text/css" href="{% static 'blog/dark-mode.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'blog/toggle.css' %}">
+
+
     {% if title %}
         <title>Blog studencki - {{ title }}</title>
     {% else %}
@@ -39,6 +43,15 @@
                     <a class="nav-item nav-link" href="{% url 'login' %}">Zaloguj</a>
                     <a class="nav-item nav-link" href="{% url 'register' %}">Rejestracja</a>
                 {% endif %}
+                <a class="nav-item nav-link" href="#">
+                  <div>
+                      <input type="checkbox" class="checkbox" id="darkSwitch">
+                      <label class="label" for="darkSwitch">
+                          <div class="ball"></div>
+                      </label>
+                  </div>
+                  <script src={% static 'js/dark-mode-switch.min.js' %}></script>
+              </a>
             </div>
           </div>
         </div>
